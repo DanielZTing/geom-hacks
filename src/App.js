@@ -12,11 +12,12 @@ class App extends React.Component {
 			// NOTE: Dimensions are in cm, order shouldn't matter if I'm reading the docs right.
 			// FIXME: Nobody would really donate one item, they would buy them in packs? Can account for this later.
 			items: {
-				"Canned Food": { quantity: 0, dimensions: [7.5, 7.5, 13] },
+				"Canned Food": { quantity: 1, dimensions: [7.5, 7.5, 13] },
 				"Toilet Paper": { quantity: 0, dimensions: [12, 12, 12] },
 				"Hand Sanitizer": { quantity: 0, dimensions: [27, 11, 8] },
 			},
-			response: ''
+			image: "",
+			quantity: 5,
 		};
 	}
 
@@ -30,9 +31,37 @@ class App extends React.Component {
 
 	componentDidMount() {
 		axios
-			.get("https://dog.ceo/api/breeds/image/random")
+			.post("https://api.paccurate.io/", {
+				itemSets: [
+					{
+						refId: 0,
+						color: "tomato",
+						weight: 2,
+						dimensions: {
+							x: 5,
+							y: 6,
+							z: 4,
+						},
+						quantity: this.state.quantity,
+					},
+					// (this.props.items).map()
+				],
+				boxTypes: [
+					{
+						weightMax: 150,
+						name: "5x6x8",
+						dimensions: {
+							x: 12,
+							y: 15,
+							z: 20,
+						},
+					},
+				],
+				includeScripts: false,
+			})
 			.then((response) => {
-				this.setState({ responce: response.data });
+				console.log(response);
+				this.setState({ image: response.data.svgs });
 			})
 			.catch((error) => {
 				console.log(error);
@@ -52,10 +81,18 @@ class App extends React.Component {
 							}
 						/>
 					))}
+
+					<Item
+						name="Orange Cube"
+						value={this.state.quantity}
+						onChange={(quantity) =>
+							this.handleChange(quantity)
+						}
+					/>
 				</div>
 				<div id="results">
 					<h1>Results</h1>
-					<Result response={this.state.response} />
+					<Result response={this.state.image} />
 				</div>
 			</div>
 		);
