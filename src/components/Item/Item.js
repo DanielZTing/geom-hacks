@@ -13,9 +13,11 @@ class Item extends React.Component {
                 <label>{this.props.name}</label>
 				<input
 					type="number"
-                    id="amount"
-                    name="amount"
-					onChange={(event) => this.props.onChange(this.props.name, event.target.value)}
+					id="amount"
+					name="amount"
+					onChange={(event) =>
+						this.props.onChange(this.props.name, event.target.value)
+					}
 					defaultValue={this.props.value}
 				/>
 			</div>
