@@ -1,4 +1,8 @@
 textarea {
-  width: 30px;
+  width: 5px;
   height: 20px;
+}
+
+input {
+  align: right;
 }

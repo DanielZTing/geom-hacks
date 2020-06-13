@@ -10,9 +10,7 @@ class Item extends React.Component {
 	render() {
 		return (
 			<div className="Item">
-                <h3>{this.props.name}</h3>
-				<label for="amount">Enter the amount</label>
-				<br />
+                <label>{this.props.name}</label>
 				<input
 					type="number"
                     id="amount"
@@ -20,8 +18,6 @@ class Item extends React.Component {
 					onChange={(event) => this.props.onChange(this.props.name, event.target.value)}
 					defaultValue={this.props.value}
 				/>
-				<h3>Output</h3>
-				<div>{this.state.value}</div>
 			</div>
 		);
 	}

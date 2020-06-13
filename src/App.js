@@ -21,11 +21,7 @@ class App extends React.Component {
 	}
 
 	handleChange(item, quantity) {
-		this.state[item]["quantity"] = quantity;
-	}
-
-	handleChange() {
-		alert("hi");
+		this.state.items[item]["quantity"] = Number(quantity);
 	}
 
 	componentDidMount() {
