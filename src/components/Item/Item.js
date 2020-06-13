@@ -4,12 +4,7 @@ import "./Item.css";
 class Item extends React.Component {
 	constructor(props) {
 		super(props);
-		this.handleChange = this.handleChange.bind(this);
 		this.state = props;
-	}
-
-	handleChange(e) {
-		this.setState({ value: e.target.value });
 	}
 
 	render() {
@@ -22,7 +17,7 @@ class Item extends React.Component {
 					type="number"
                     id="amount"
                     name="amount"
-					onChange={this.handleChange}
+					onChange={() => this.props.onChange()}
 					defaultValue={this.props.value}
 				/>
 				<h3>Output</h3>
