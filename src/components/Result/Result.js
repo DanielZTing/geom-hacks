@@ -1,9 +1,10 @@
 import React from "react";
 
-const Result = () => {
+const Result = (props) => {
 	return (
 		<div>
 			<h2>API Call</h2>
+			<p>{props.response}</p>
 		</div>
 	);
 };
