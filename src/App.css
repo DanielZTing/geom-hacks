@@ -1,15 +1,16 @@
 .App {
-  height: 100%;
-  padding: 0 20vw;
-  text-align: center;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  background-color: lightgray;
+	height: 100%;
+	padding: 0 20vw;
+	text-align: center;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	background-color: lightgray;
 }
 
-.items, .results {
-  flex: 50%;
-  max-width: 50%;
-  padding: 16px 4px;
+.items,
+.results {
+	flex: 50%;
+	max-width: 50%;
+	padding: 16px 4px;
 }

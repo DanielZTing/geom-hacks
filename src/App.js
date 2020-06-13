@@ -22,51 +22,49 @@ class App extends React.Component {
 	}
 
 	handleChange(item, quantity) {
-		this.state[item]["quantity"] = quantity;
+		this.state.items[item]["quantity"] = quantity;
 	}
 
-	handleChange() {
-		alert("hi");
-	}
-
-	componentDidMount() {
-		axios
-			.post("https://api.paccurate.io/", {
-				itemSets: [
-					{
-						refId: 0,
-						color: "tomato",
-						weight: 2,
-						dimensions: {
-							x: 5,
-							y: 6,
-							z: 4,
-						},
-						quantity: this.state.quantity,
-					},
-					// (this.props.items).map()
-				],
-				boxTypes: [
-					{
-						weightMax: 150,
-						name: "5x6x8",
-						dimensions: {
-							x: 12,
-							y: 15,
-							z: 20,
-						},
-					},
-				],
-				includeScripts: false,
-			})
-			.then((response) => {
-				console.log(response);
-				this.setState({ image: response.data.svgs });
-			})
-			.catch((error) => {
-				console.log(error);
-			});
-	}
+	// componentDidMount() {
+	// 	axios
+	// 		.post("https://api.paccurate.io/", {
+	// 			authorization:
+	// 				"JDYOJNGkVd5Zg4U42E3bT7htL350I0oYGBN5ufUbFaMrr5Kh_CmBc_Q4v6n_jhiG",
+	// 			itemSets: [
+	// 				{
+	// 					refId: 0,
+	// 					color: "tomato",
+	// 					weight: 2,
+	// 					dimensions: {
+	// 						x: 5,
+	// 						y: 6,
+	// 						z: 4,
+	// 					},
+	// 					quantity: this.props.quantity,
+	// 				},
+	// 				// this.props.items.map(item),
+	// 			],
+	// 			boxTypes: [
+	// 				{
+	// 					weightMax: 150,
+	// 					name: "5x6x8",
+	// 					dimensions: {
+	// 						x: 12,
+	// 						y: 15,
+	// 						z: 20,
+	// 					},
+	// 				},
+	// 			],
+	// 			includeScripts: false,
+	// 		})
+	// 		.then((response) => {
+	// 			console.log(response);
+	// 			this.setState({ image: response.data.svgs });
+	// 		})
+	// 		.catch((error) => {
+	// 			console.log(error);
+	// 		});
+	// }
 
 	render() {
 		return (
@@ -81,14 +79,6 @@ class App extends React.Component {
 							}
 						/>
 					))}
-
-					<Item
-						name="Orange Cube"
-						value={this.state.quantity}
-						onChange={(quantity) =>
-							this.handleChange(quantity)
-						}
-					/>
 				</div>
 				<div id="results">
 					<h1>Results</h1>
