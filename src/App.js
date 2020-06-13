@@ -22,7 +22,14 @@ class App extends React.Component {
 	}
 
 	handleChange(item, quantity) {
-		this.state.items[item]["quantity"] = quantity;
+		this.state.items[item]['quantity'] = quantity;
+		// let temp = this.state.items;
+		// temp[item].quantity = quantity;
+		// this.setState({
+		// 	items: temp,
+		// 	image: "",
+		// 	quantity: 5,
+		// });
 	}
 
 	// componentDidMount() {
