@@ -11,7 +11,6 @@ const styleObj = {
 };
 
 const Result = (props) => {
-	console.log(props.response);
 	return (
 		<div>
 			{Object.keys(props.response).map((element) => (

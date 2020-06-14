@@ -70,8 +70,6 @@ const uspsRate = {
 	],
 };
 
-
-
 class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -84,78 +82,96 @@ class App extends React.Component {
 				"Canned Food": {
 					quantity: 0,
 					dimensions: { x: 8.128, y: 8.128, z: 12.7 },
-					color: "#f44336",
+					color: "#d33535",
 					weight: 1.1625,
+					cost: 178,
 				},
 				"Toilet Paper": {
 					quantity: 0,
-					dimensions: { x: 33.528, y: 11.176, z: 20.32 },
-					color: "#E91E63",
-					weight: 1.92,
+					dimensions: { x: 5.08, y: 5.08, z: 5.08 },
+					color: "#688ed6",
+					weight: 1,
+					cost: 60,
 				},
 				"Hand Sanitizer": {
 					quantity: 0,
 					dimensions: { x: 5, y: 3, z: 12 },
-					color: "#9C27B0",
+					color: "green",
 					weight: 0.55125,
+					cost: 688,
 				},
-				"Tylenol": {
+				Tylenol: {
 					quantity: 0,
 					dimensions: { x: 9.652, y: 5.08, z: 5.08 },
-					color: "#3F51B5",
+					color: "red",
 					weight: 0.21875,
+					cost: 947,
 				},
-				"Advil": {
+				Advil: {
 					quantity: 0,
 					dimensions: { x: 10.16, y: 5.08, z: 4.826 },
-					color: "#2196F3",
+					color: "turquoise",
 					weight: 0.0375,
+					cost: 847,
 				},
 				"Rubbing Alcohol Wipes": {
 					quantity: 0,
 					dimensions: { x: 15, y: 5, z: 5 },
-					color: "#00BCD4",
+					color: "lime",
 					weight: 0.2,
+					cost: 999,
 				},
 				"Rubbing Alcohol": {
 					quantity: 0,
 					dimensions: { x: 8.89, y: 8.89, z: 20.32 },
-					color: "#4CAF50",
+					color: "orange",
 					weight: 2.25,
+					cost: 2898,
 				},
 				"Wet Wipes": {
 					quantity: 0,
 					dimensions: { x: 15, y: 4, z: 7 },
-					color: "#CDDC39",
+					color: "brown",
 					weight: 0.625,
+					cost: 1449,
 				},
 				"Tissue Box": {
 					quantity: 0,
-					dimensions: { x: 9, y: 5, z: 5},
-					color: "#FF9800",
+					dimensions: { x: 9, y: 5, z: 5 },
+					color: "indigo",
 					weight: 0.775,
+					cost: 1358,
 				},
-				"Gloves": {
+				Gloves: {
 					quantity: 0,
 					dimensions: { x: 21, y: 12, z: 6 },
-					color: "#795548",
+					color: "purple",
 					weight: 0.9125,
+					cost: 1849,
 				},
-				"Masks": {
+				Masks: {
 					quantity: 0,
-					dimensions: { x: 17.78, y: 10.16, z: 7.62},
-					color: "#607D8B",
+					dimensions: { x: 17.78, y: 10.16, z: 7.62 },
+					color: "black",
 					weight: 0.4,
+					cost: 2994,
 				},
 			},
 			image: "",
-			tooLarge: false,
+			boxCost: "",
+			totalCost: "",
 		};
 	}
 
 	handleChange(item, quantity) {
-		this.state.items[item]["quantity"] = Number(quantity);
-		console.log(this.state);
+		if (quantity > -1)
+			this.state.items[item]["quantity"] = Number(quantity);
+		
+		this.state.totalCost = 0;
+		Object.keys(this.state.items).map((element) => (
+			this.state.totalCost += this.state.items[element]["quantity"] * this.state.items[element]["cost"]
+		));
+		// console.log(this.state);
 		this.apiCall();
 
 		// let temp = this.state.items;
@@ -170,7 +186,7 @@ class App extends React.Component {
 	apiCall() {
 		axios
 			.post("https://api.paccurate.io/", {
-				authorization:
+				key:
 					"JDYOJNGkVd5Zg4U42E3bT7htL350I0oYGBN5ufUbFaMrr5Kh_CmBc_Q4v6n_jhiG",
 				imgSize: 200,
 				itemSets: Object.values(this.state.items),
@@ -246,10 +262,8 @@ class App extends React.Component {
 			})
 			.then((response) => {
 				console.log(response);
-				this.setState({ image: "" });
 				this.setState({ image: response.data.svgs });
-				this.setState({ tooLarge: false });
-				// this.setState({ tooLarge: response.data. });
+				this.setState({ boxCost: response.data.totalCost });
 			})
 			.catch((error) => {
 				console.log(error);
@@ -263,6 +277,8 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="App">
+				<h1>Praccurate</h1>
+				<p>Total cost: ${(this.state.totalCost + this.state.boxCost)/100}</p>
 				<div id="items" class="split left">
 					{Object.keys(this.state.items).map((item) => (
 						<Item
