@@ -61,21 +61,21 @@ class App extends React.Component {
 				authorization:
 					"JDYOJNGkVd5Zg4U42E3bT7htL350I0oYGBN5ufUbFaMrr5Kh_CmBc_Q4v6n_jhiG",
 				itemSets: [
-					{
-						refId: 0,
-						color: "tomato",
-						weight: 2,
-						dimensions: {
-							x: 5,
-							y: 6,
-							z: 4,
-						},
-						// quantity: this.state.items["Canned Food"]["quantity"],
-						quantity: 2,
-					},
+					// {
+					// 	refId: 0,
+					// 	color: "tomato",
+					// 	weight: 2,
+					// 	dimensions: {
+					// 		x: 5,
+					// 		y: 6,
+					// 		z: 4,
+					// 	},
+					// 	// quantity: this.state.items["Canned Food"]["quantity"],
+					// 	quantity: 2,
+					// },
 					// this.state.items.map(item),
 					this.state.items["Canned Food"],
-					this.state.items["Toliet Paper"],
+					this.state.items["Toilet Paper"],
 					this.state.items["Hand Sanitizer"],
 				],
 				boxTypes: [
@@ -120,7 +120,6 @@ class App extends React.Component {
 					))}
 				</div>
 				<div id="results" class="split right">
-					<h1>Results</h1>
 					<Result response={this.state.image} />
 				</div>
 			</div>

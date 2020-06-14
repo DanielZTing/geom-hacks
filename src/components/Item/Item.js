@@ -20,6 +20,8 @@ class Item extends React.Component {
 					name="amount"
 					min="0"
 					max="999"
+					variant="filled"
+					label="Amount"
 					onChange={(event) =>
 						this.props.onChange(this.props.name, event.target.value)
 					}

@@ -1,6 +1,6 @@
 .App {
 	height: 100%;
-	/* padding: 0 20vw; */
+	padding: 0 20vw;
 	text-align: center;
 	display: flex;
 	flex-wrap: wrap;
@@ -10,7 +10,7 @@
 
 .split {
   height: 100%;
-  width: 33%;
+  width: 50%;
   position: fixed;
   z-index: 1;
   top: 0;
@@ -20,8 +20,13 @@
 
 .left {
   left: 0;
+  top: 40%
 }
 
 .right {
-  right: 33%;
+  right: 0;
+}
+
+Item {
+  margin: 100px;
 }
