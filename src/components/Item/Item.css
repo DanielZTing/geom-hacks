@@ -1,0 +1,15 @@
+label {
+    margin-top: 100px;
+    float: left;
+    width: -200em;
+    margin-left: -10em;
+    font-weight: 1000;
+    font-size: 100px;
+    font-family: Palanquin;
+    }
+    amount-label{
+        font-family: Palanquin 
+    }
+    data-shrink{
+        font-family: 'Courier New', Courier, monospace;
+    }

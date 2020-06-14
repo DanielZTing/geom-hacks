@@ -7,7 +7,15 @@
 	align-items: center;
 	background-color: lightgray;
 }
-
+.MuiInputBase-root{
+  top: 80px;
+}
+.names{
+  text-align: left;
+}
+.NavBar{
+  width: 1px;
+}
 .split {
   height: 100%;
   width: 50%;

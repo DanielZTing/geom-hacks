@@ -3,8 +3,10 @@ import logo from "./logo.svg";
 import "./App.css";
 import Item from "./components/Item/Item.js";
 import Result from "./components/Result/Result.js";
-import axios from "axios";
+import axios from "axios"
+import NavBar from "./components/NavBar"
 import "fontsource-roboto";
+import Jumbotron from "./Jumbotron"
 
 const uspsRate = {
 	carrier: "USPS",
@@ -297,12 +299,14 @@ class App extends React.Component {
 
 	render() {
 		return (
-			<div className="App">
-				<h1>Praccurate</h1>
+			<div>
+				<NavBar/>
 				<p>
 					Total cost: $
 					{(this.state.totalCost + this.state.boxCost) / 100}
 				</p>
+				<div/>
+				<div className='App'>
 				<div id="items" class="split left">
 					{Object.keys(this.state.items).map((item) => (
 						<Item
@@ -320,6 +324,7 @@ class App extends React.Component {
 						response={this.state.image}
 					/>
 				</div>
+			</div>
 			</div>
 		);
 	}
