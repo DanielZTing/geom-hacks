@@ -13,13 +13,12 @@ class Item extends React.Component {
 	render() {
 		return (
 			<div className="Item">
-                {/* <Typography>{this.props.name}</Typography> */}
+				{/* <Typography>{this.props.name}</Typography> */}
 				<TextField
 					type="number"
 					id="amount"
 					name="amount"
-					min="0"
-					max="999"
+					InputProps={{ inputProps: { min: 0, max: 100 } }}
 					variant="filled"
 					label={this.props.name}
 					onChange={(event) =>
