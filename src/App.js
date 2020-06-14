@@ -70,6 +70,8 @@ const uspsRate = {
 	],
 };
 
+
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);
@@ -80,19 +82,19 @@ class App extends React.Component {
 			// FIXME: Nobody would really donate one item, they would buy them in packs? Can account for this later.
 			items: {
 				"Canned Food": {
-					quantity: 5,
+					quantity: 0,
 					dimensions: { x: 7.5, y: 7.5, z: 13 },
 					color: "brown",
 					weight: 2,
 				},
 				"Toilet Paper": {
-					quantity: 3,
+					quantity: 0,
 					dimensions: { x: 12, y: 12, z: 12 },
 					color: "yellow",
 					weight: 0.5,
 				},
 				"Hand Sanitizer": {
-					quantity: 5,
+					quantity: 0,
 					dimensions: { x: 27, y: 11, z: 8 },
 					color: "blue",
 					weight: 0.7,
