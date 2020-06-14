@@ -13,10 +13,16 @@ const styleObj = {
 const Result = (props) => {
 	console.log(props.response);
 	return (
-		<div
-			dangerouslySetInnerHTML={{ __html: props.response }}
-			style={styleObj}
-		/>
+		<div>
+			{Object.keys(props.response).map((element) => (
+				<div
+					dangerouslySetInnerHTML={{
+						__html: props.response[element],
+					}}
+					style={styleObj}
+				/>
+			))}
+		</div>
 	);
 };
 
