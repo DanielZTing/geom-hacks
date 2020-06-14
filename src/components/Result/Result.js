@@ -6,7 +6,9 @@ const Result = (props) => {
 	console.log(props.response)
 	return (
 		<div>
-			<div dangerouslySetInnerHTML={{ __html: props.response }} />
+			{Object.keys(props.response).map((element) => (
+				<div dangerouslySetInnerHTML={{ __html: props.response[element] }} />
+			))}
 		</div>
 	);
 };
