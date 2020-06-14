@@ -18,6 +18,8 @@ class Item extends React.Component {
 					type="number"
 					id="amount"
 					name="amount"
+					min="0"
+					max="999"
 					onChange={(event) =>
 						this.props.onChange(this.props.name, event.target.value)
 					}
