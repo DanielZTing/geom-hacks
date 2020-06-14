@@ -14,12 +14,17 @@ const Result = (props) => {
 	return (
 		<div>
 			{Object.keys(props.response).map((element) => (
-				<div
-					dangerouslySetInnerHTML={{
-						__html: props.response[element],
-					}}
-					style={styleObj}
-				/>
+				<div>
+					{console.log(element)}
+					<div
+						dangerouslySetInnerHTML={{
+							__html: props.response[element],
+						}}
+						style={styleObj}
+					/>
+					{/* {console.log(props.names[element])} */}
+					<h2>{props.names[element]}</h2>
+				</div>
 			))}
 		</div>
 	);

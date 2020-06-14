@@ -9,35 +9,35 @@ import "fontsource-roboto";
 const uspsRate = {
 	carrier: "USPS",
 	rates: [
-		7.50,
+		7.5,
 		8.25,
-		8.70,
-		9.20,
-		10.20,
+		8.7,
+		9.2,
+		10.2,
 		10.95,
 		11.95,
-		12.30,
-		12.80,
-		13.60,
+		12.3,
+		12.8,
+		13.6,
 		14.95,
 		16.25,
 		17.25,
-		18.30,
+		18.3,
 		18.95,
-		19.60,
-		20.50,
+		19.6,
+		20.5,
 		20.85,
 		21.45,
 		22.35,
-		25.00,
-		29.30,
-		31.60,
+		25.0,
+		29.3,
+		31.6,
 		33.35,
-		34.80,
+		34.8,
 		36.05,
-		38.40,
-		41.30,
-		44.20,
+		38.4,
+		41.3,
+		44.2,
 		47.15,
 	],
 	weights: [
@@ -80,7 +80,7 @@ class App extends React.Component {
 			// FIXME: Nobody would really donate one item, they would buy them in packs? Can account for this later.
 			items: {
 				"Canned Food": {
-					quantity: 0,
+					quantity: 3,
 					dimensions: { x: 8.128, y: 8.128, z: 12.7 },
 					color: "#f44336",
 					weight: 1.1625,
@@ -101,21 +101,21 @@ class App extends React.Component {
 					cost: 688,
 				},
 				Tylenol: {
-					quantity: 0,
+					quantity: 1,
 					dimensions: { x: 9.652, y: 5.08, z: 5.08 },
 					color: "#4CAF50",
 					weight: 0.21875,
 					cost: 947,
 				},
 				Advil: {
-					quantity: 0,
+					quantity: 1,
 					dimensions: { x: 10.16, y: 5.08, z: 4.826 },
 					color: "#2196F3",
 					weight: 0.0375,
 					cost: 847,
 				},
 				"Rubbing Alcohol Wipes": {
-					quantity: 0,
+					quantity: 1,
 					dimensions: { x: 15, y: 5, z: 5 },
 					color: "#3F51B5",
 					weight: 0.2,
@@ -136,7 +136,7 @@ class App extends React.Component {
 					cost: 1449,
 				},
 				"Tissue Box": {
-					quantity: 0,
+					quantity: 1,
 					dimensions: { x: 9, y: 5, z: 5 },
 					color: "#9E9E9E",
 					weight: 0.775,
@@ -150,14 +150,16 @@ class App extends React.Component {
 					cost: 1849,
 				},
 				Masks: {
-					quantity: 0,
+					quantity: 1,
 					dimensions: { x: 17.78, y: 10.16, z: 7.62 },
 					color: "#009688",
 					weight: 0.4,
 					cost: 2994,
 				},
 			},
+			data: "",
 			image: "",
+			names: {},
 			boxCost: "",
 			totalCost: "",
 		};
@@ -168,9 +170,12 @@ class App extends React.Component {
 			this.state.items[item]["quantity"] = Number(quantity);
 
 		this.state.totalCost = 0;
-		Object.keys(this.state.items).map((element) => (
-			this.state.totalCost += this.state.items[element]["quantity"] * this.state.items[element]["cost"]
-		));
+		Object.keys(this.state.items).map(
+			(element) =>
+				(this.state.totalCost +=
+					this.state.items[element]["quantity"] *
+					this.state.items[element]["cost"])
+		);
 		// console.log(this.state);
 		this.apiCall();
 
@@ -192,7 +197,7 @@ class App extends React.Component {
 				itemSets: Object.values(this.state.items),
 				boxTypes: [
 					{
-						name: "USPS Small",
+						name: "USPS Small Flat Rate Box",
 						weightMax: 70,
 						dimensions: {
 							x: 21.9075,
@@ -203,7 +208,7 @@ class App extends React.Component {
 						rateTable: uspsRate,
 					},
 					{
-						name: "USPS Medium 1",
+						name: "USPS Medium Flat Rate Box",
 						weightMax: 70,
 						dimensions: {
 							x: 27.94,
@@ -214,7 +219,7 @@ class App extends React.Component {
 						rateTable: uspsRate,
 					},
 					{
-						name: "USPS Medium 2",
+						name: "USPS Medium Flat Rate Box",
 						weightMax: 70,
 						dimensions: {
 							x: 34.6075,
@@ -225,7 +230,7 @@ class App extends React.Component {
 						rateTable: uspsRate,
 					},
 					{
-						name: "USPS Medium 2",
+						name: "USPS Medium Flat Rate Box",
 						weightMax: 70,
 						dimensions: {
 							x: 34.6075,
@@ -236,7 +241,7 @@ class App extends React.Component {
 						rateTable: uspsRate,
 					},
 					{
-						name: "USPS Large 1",
+						name: "USPS Large Flat Rate Box",
 						weightMax: 70,
 						dimensions: {
 							x: 30.48,
@@ -247,7 +252,7 @@ class App extends React.Component {
 						rateTable: uspsRate,
 					},
 					{
-						name: "USPS Large 2",
+						name: "USPS Large Flat Rate Box",
 						weightMax: 70,
 						dimensions: {
 							x: 60.16625,
@@ -264,6 +269,14 @@ class App extends React.Component {
 				console.log(response);
 				this.setState({ image: response.data.svgs });
 				this.setState({ boxCost: response.data.totalCost });
+
+				Object.keys(response.data.boxes).map(
+					(element) =>
+						(this.state.names[element] =
+							response.data.boxes[element].box.boxType.name)
+				);
+				// console.log(response.data.boxes[0].box.boxType.name);
+				// console.log(this.state.names);
 			})
 			.catch((error) => {
 				console.log(error);
@@ -271,6 +284,14 @@ class App extends React.Component {
 	}
 
 	componentDidMount() {
+		this.state.totalCost = 0;
+		Object.keys(this.state.items).map(
+			(element) =>
+				(this.state.totalCost +=
+					this.state.items[element]["quantity"] *
+					this.state.items[element]["cost"])
+		);
+
 		this.apiCall();
 	}
 
@@ -278,7 +299,10 @@ class App extends React.Component {
 		return (
 			<div className="App">
 				<h1>Praccurate</h1>
-				<p>Total cost: ${(this.state.totalCost + this.state.boxCost)/100}</p>
+				<p>
+					Total cost: $
+					{(this.state.totalCost + this.state.boxCost) / 100}
+				</p>
 				<div id="items" class="split left">
 					{Object.keys(this.state.items).map((item) => (
 						<Item
@@ -291,7 +315,10 @@ class App extends React.Component {
 					))}
 				</div>
 				<div id="results" class="split right">
-					<Result response={this.state.image} />
+					<Result
+						names={this.state.names}
+						response={this.state.image}
+					/>
 				</div>
 			</div>
 		);
