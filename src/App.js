@@ -83,21 +83,69 @@ class App extends React.Component {
 			items: {
 				"Canned Food": {
 					quantity: 0,
-					dimensions: { x: 7.5, y: 7.5, z: 13 },
-					color: "brown",
-					weight: 2,
+					dimensions: { x: 8.128, y: 8.128, z: 12.7 },
+					color: "gray",
+					weight: 1.1625,
 				},
 				"Toilet Paper": {
 					quantity: 0,
-					dimensions: { x: 12, y: 12, z: 12 },
-					color: "yellow",
-					weight: 0.5,
+					dimensions: { x: 33.528, y: 11.176, z: 20.32 },
+					color: "white",
+					weight: 1.92,
 				},
 				"Hand Sanitizer": {
 					quantity: 0,
-					dimensions: { x: 27, y: 11, z: 8 },
-					color: "blue",
-					weight: 0.7,
+					dimensions: { x: 5, y: 3, z: 12 },
+					color: "green",
+					weight: 0.55125,
+				},
+				"Tylenol": {
+					quantity: 0,
+					dimensions: { x: 9.652, y: 5.08, z: 5.08 },
+					color: "red",
+					weight: 0.21875,
+				},
+				"Advil": {
+					quantity: 0,
+					dimensions: { x: 10.16, y: 5.08, z: 4.826 },
+					color: "turquoise",
+					weight: 0.0375,
+				},
+				"Rubbing Alcohol Wipes": {
+					quantity: 0,
+					dimensions: { x: 15, y: 5, z: 5 },
+					color: "lime",
+					weight: 0.2,
+				},
+				"Rubbing Alcohol": {
+					quantity: 0,
+					dimensions: { x: 8.89, y: 8.89, z: 20.32 },
+					color: "orange",
+					weight: 2.25,
+				},
+				"Wet Wipes": {
+					quantity: 0,
+					dimensions: { x: 15, y: 4, z: 7 },
+					color: "brown",
+					weight: 0.625,
+				},
+				"Tissue Box": {
+					quantity: 0,
+					dimensions: { x: 9, y: 5, z: 5},
+					color: "indigo",
+					weight: 0.775,
+				},
+				"Gloves": {
+					quantity: 0,
+					dimensions: { x: 21, y: 12, z: 6 },
+					color: "purple",
+					weight: 0.9125,
+				},
+				"Masks": {
+					quantity: 0,
+					dimensions: { x: 17.78, y: 10.16, z: 7.62},
+					color: "black",
+					weight: 0.4,
 				},
 			},
 			image: "",
@@ -125,12 +173,7 @@ class App extends React.Component {
 				authorization:
 					"JDYOJNGkVd5Zg4U42E3bT7htL350I0oYGBN5ufUbFaMrr5Kh_CmBc_Q4v6n_jhiG",
 				imgSize: 200,
-				itemSets: [
-					// this.state.items.map(item),
-					this.state.items["Canned Food"],
-					this.state.items["Toilet Paper"],
-					this.state.items["Hand Sanitizer"],
-				],
+				itemSets: Object.values(this.state.items),
 				boxTypes: [
 					{
 						name: "USPS Small",

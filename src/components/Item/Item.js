@@ -13,7 +13,7 @@ class Item extends React.Component {
 	render() {
 		return (
 			<div className="Item">
-                <Typography>{this.props.name}</Typography>
+                {/* <Typography>{this.props.name}</Typography> */}
 				<TextField
 					type="number"
 					id="amount"
@@ -21,7 +21,7 @@ class Item extends React.Component {
 					min="0"
 					max="999"
 					variant="filled"
-					label="Amount"
+					label={this.props.name}
 					onChange={(event) =>
 						this.props.onChange(this.props.name, event.target.value)
 					}
