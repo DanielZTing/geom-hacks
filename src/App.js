@@ -4,6 +4,7 @@ import "./App.css";
 import Item from "./components/Item/Item.js";
 import Result from "./components/Result/Result.js";
 import axios from "axios";
+import 'fontsource-roboto';
 
 class App extends React.Component {
 	constructor(props) {
@@ -77,7 +78,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="App">
-				<div id="items">
+				<div id="items" class="split left">
 					{Object.keys(this.state.items).map((item) => (
 						<Item
 							name={item}
@@ -88,7 +89,7 @@ class App extends React.Component {
 						/>
 					))}
 				</div>
-				<div id="results">
+				<div id="results" class="split right">
 					<h1>Results</h1>
 					<Result response={this.state.image} />
 				</div>

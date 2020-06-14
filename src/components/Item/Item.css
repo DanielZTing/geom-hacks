@@ -1,4 +1,16 @@
-textarea {
-	width: 30px;
-	height: 20px;
+label {
+  display: inline-block;
+  width: 400px;
+  text-align: left;
+  font-size: large;
+}
+
+/* TextField { */
+  /* width: 40px; */
+  /* text-align: right; */
+/* } */
+
+div {
+  font-size: large;
+  /* margin: 1em; */
 }

@@ -1,4 +1,7 @@
 import React from "react";
+import TextField from '@material-ui/core/TextField';
+import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
 import "./Item.css";
 
 class Item extends React.Component {
@@ -10,8 +13,8 @@ class Item extends React.Component {
 	render() {
 		return (
 			<div className="Item">
-                <label>{this.props.name}</label>
-				<input
+                <Typography>{this.props.name}</Typography>
+				<TextField
 					type="number"
 					id="amount"
 					name="amount"
