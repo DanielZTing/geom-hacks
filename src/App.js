@@ -6,38 +6,42 @@ import Result from "./components/Result/Result.js";
 import axios from "axios";
 import 'fontsource-roboto';
 
+const uspsRate = {
+	carrier: "USPS",
+	rates: [],
+	weights: [],
+};
+
 class App extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			// NOTE: Dimensions are in cm, order shouldn't matter if I'm reading the docs right.
 			// Weight is in LB
+			// Price is in USD cents
 			// FIXME: Nobody would really donate one item, they would buy them in packs? Can account for this later.
 			items: {
 				"Canned Food": {
-					quantity: 10,
+					quantity: 5,
 					dimensions: { x: 7.5, y: 7.5, z: 13 },
 					color: "brown",
-					refId: 1,
 					weight: 2,
 				},
 				"Toilet Paper": {
 					quantity: 3,
 					dimensions: { x: 12, y: 12, z: 12 },
 					color: "yellow",
-					refId: 2,
 					weight: 0.5,
 				},
 				"Hand Sanitizer": {
 					quantity: 5,
 					dimensions: { x: 27, y: 11, z: 8 },
 					color: "blue",
-					refId: 3,
 					weight: 0.7,
 				},
 			},
 			image: "",
-			quantity: 5,
+			tooLarge: false,
 		};
 	}
 
@@ -60,19 +64,8 @@ class App extends React.Component {
 			.post("https://api.paccurate.io/", {
 				authorization:
 					"JDYOJNGkVd5Zg4U42E3bT7htL350I0oYGBN5ufUbFaMrr5Kh_CmBc_Q4v6n_jhiG",
+				imgSize: 200,
 				itemSets: [
-					// {
-					// 	refId: 0,
-					// 	color: "tomato",
-					// 	weight: 2,
-					// 	dimensions: {
-					// 		x: 5,
-					// 		y: 6,
-					// 		z: 4,
-					// 	},
-					// 	// quantity: this.state.items["Canned Food"]["quantity"],
-					// 	quantity: 2,
-					// },
 					// this.state.items.map(item),
 					this.state.items["Canned Food"],
 					this.state.items["Toilet Paper"],
@@ -80,13 +73,64 @@ class App extends React.Component {
 				],
 				boxTypes: [
 					{
-						weightMax: 150,
-						name: "5x6x8",
+						name: "USPS Small",
+						weightMax: 70,
 						dimensions: {
-							x: 12,
-							y: 15,
-							z: 20,
+							x: 21.9075,
+							y: 13.6525,
+							z: 4.1275,
 						},
+						price: 830,
+					},
+					{
+						name: "USPS Medium 1",
+						weightMax: 70,
+						dimensions: {
+							x: 27.94,
+							y: 21.59,
+							z: 13.97,
+						},
+						price: 1505,
+					},
+					{
+						name: "USPS Medium 2",
+						weightMax: 70,
+						dimensions: {
+							x: 34.6075,
+							y: 30.1625,
+							z: 8.5725,
+						},
+						price: 1505,
+					},
+					{
+						name: "USPS Medium 2",
+						weightMax: 70,
+						dimensions: {
+							x: 34.6075,
+							y: 30.1625,
+							z: 8.5725,
+						},
+						price: 1505,
+					},
+					{
+						name: "USPS Large 1",
+						weightMax: 70,
+						dimensions: {
+							x: 34.6075,
+							y: 30.1625,
+							z: 8.5725,
+						},
+						price: 2110,
+					},
+					{
+						name: "USPS Large 2",
+						weightMax: 70,
+						dimensions: {
+							x: 34.6075,
+							y: 30.1625,
+							z: 8.5725,
+						},
+						price: 2110,
 					},
 				],
 				includeScripts: false,
@@ -95,6 +139,8 @@ class App extends React.Component {
 				console.log(response);
 				this.setState({ image: "" });
 				this.setState({ image: response.data.svgs });
+				this.setState({ tooLarge: false });
+				// this.setState({ tooLarge: response.data. });
 			})
 			.catch((error) => {
 				console.log(error);

@@ -1,9 +1,3 @@
-line.volume-line {
-	stroke: #666;
-	stroke-dasharray: 2, 1;
-	stroke-width: 1;
-}
-
 h1 {
 	margin-block-start: 0em;
 	margin-block-end: 0em;
