@@ -82,77 +82,77 @@ class App extends React.Component {
 				"Canned Food": {
 					quantity: 0,
 					dimensions: { x: 8.128, y: 8.128, z: 12.7 },
-					color: "#d33535",
+					color: "#f44336",
 					weight: 1.1625,
 					cost: 178,
 				},
 				"Toilet Paper": {
 					quantity: 0,
 					dimensions: { x: 5.08, y: 5.08, z: 5.08 },
-					color: "#688ed6",
+					color: "#FF9800",
 					weight: 1,
 					cost: 60,
 				},
 				"Hand Sanitizer": {
 					quantity: 0,
 					dimensions: { x: 5, y: 3, z: 12 },
-					color: "green",
+					color: "#FFEB3B",
 					weight: 0.55125,
 					cost: 688,
 				},
 				Tylenol: {
 					quantity: 0,
 					dimensions: { x: 9.652, y: 5.08, z: 5.08 },
-					color: "red",
+					color: "#4CAF50",
 					weight: 0.21875,
 					cost: 947,
 				},
 				Advil: {
 					quantity: 0,
 					dimensions: { x: 10.16, y: 5.08, z: 4.826 },
-					color: "turquoise",
+					color: "#2196F3",
 					weight: 0.0375,
 					cost: 847,
 				},
 				"Rubbing Alcohol Wipes": {
 					quantity: 0,
 					dimensions: { x: 15, y: 5, z: 5 },
-					color: "lime",
+					color: "#3F51B5",
 					weight: 0.2,
 					cost: 999,
 				},
 				"Rubbing Alcohol": {
 					quantity: 0,
 					dimensions: { x: 8.89, y: 8.89, z: 20.32 },
-					color: "orange",
+					color: "#9C27B0",
 					weight: 2.25,
 					cost: 2898,
 				},
 				"Wet Wipes": {
 					quantity: 0,
 					dimensions: { x: 15, y: 4, z: 7 },
-					color: "brown",
+					color: "#795548",
 					weight: 0.625,
 					cost: 1449,
 				},
 				"Tissue Box": {
 					quantity: 0,
 					dimensions: { x: 9, y: 5, z: 5 },
-					color: "indigo",
+					color: "#9E9E9E",
 					weight: 0.775,
 					cost: 1358,
 				},
 				Gloves: {
 					quantity: 0,
 					dimensions: { x: 21, y: 12, z: 6 },
-					color: "purple",
+					color: "#607D8B",
 					weight: 0.9125,
 					cost: 1849,
 				},
 				Masks: {
 					quantity: 0,
 					dimensions: { x: 17.78, y: 10.16, z: 7.62 },
-					color: "black",
+					color: "#009688",
 					weight: 0.4,
 					cost: 2994,
 				},
@@ -166,7 +166,7 @@ class App extends React.Component {
 	handleChange(item, quantity) {
 		if (quantity > -1)
 			this.state.items[item]["quantity"] = Number(quantity);
-		
+
 		this.state.totalCost = 0;
 		Object.keys(this.state.items).map((element) => (
 			this.state.totalCost += this.state.items[element]["quantity"] * this.state.items[element]["cost"]
