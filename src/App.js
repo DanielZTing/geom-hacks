@@ -4,13 +4,73 @@ import "./App.css";
 import Item from "./components/Item/Item.js";
 import Result from "./components/Result/Result.js";
 import axios from "axios";
-import 'fontsource-roboto';
+import "fontsource-roboto";
 
 const uspsRate = {
 	carrier: "USPS",
-	rates: [],
-	weights: [],
+	rates: [
+		750,
+		825,
+		870,
+		920,
+		1020,
+		1095,
+		1195,
+		1230,
+		1280,
+		1360,
+		1495,
+		1625,
+		1725,
+		1830,
+		1895,
+		1960,
+		2050,
+		2085,
+		2145,
+		2235,
+		2500,
+		2930,
+		3160,
+		3335,
+		3480,
+		3605,
+		3840,
+		4130,
+		4420,
+		4715,
+	],
+	weights: [
+		1,
+		2,
+		3,
+		4,
+		5,
+		6,
+		7,
+		8,
+		9,
+		10,
+		11,
+		12,
+		13,
+		14,
+		15,
+		20,
+		25,
+		30,
+		35,
+		40,
+		45,
+		50,
+		55,
+		60,
+		65,
+		70,
+	],
 };
+
+
 
 class App extends React.Component {
 	constructor(props) {
@@ -22,19 +82,19 @@ class App extends React.Component {
 			// FIXME: Nobody would really donate one item, they would buy them in packs? Can account for this later.
 			items: {
 				"Canned Food": {
-					quantity: 5,
+					quantity: 0,
 					dimensions: { x: 7.5, y: 7.5, z: 13 },
 					color: "brown",
 					weight: 2,
 				},
 				"Toilet Paper": {
-					quantity: 3,
+					quantity: 0,
 					dimensions: { x: 12, y: 12, z: 12 },
 					color: "yellow",
 					weight: 0.5,
 				},
 				"Hand Sanitizer": {
-					quantity: 5,
+					quantity: 0,
 					dimensions: { x: 27, y: 11, z: 8 },
 					color: "blue",
 					weight: 0.7,
@@ -81,6 +141,7 @@ class App extends React.Component {
 							z: 4.1275,
 						},
 						price: 830,
+						rateTable: uspsRate,
 					},
 					{
 						name: "USPS Medium 1",
@@ -91,6 +152,7 @@ class App extends React.Component {
 							z: 13.97,
 						},
 						price: 1505,
+						rateTable: uspsRate,
 					},
 					{
 						name: "USPS Medium 2",
@@ -101,6 +163,7 @@ class App extends React.Component {
 							z: 8.5725,
 						},
 						price: 1505,
+						rateTable: uspsRate,
 					},
 					{
 						name: "USPS Medium 2",
@@ -111,26 +174,29 @@ class App extends React.Component {
 							z: 8.5725,
 						},
 						price: 1505,
+						rateTable: uspsRate,
 					},
 					{
 						name: "USPS Large 1",
 						weightMax: 70,
 						dimensions: {
-							x: 34.6075,
-							y: 30.1625,
-							z: 8.5725,
+							x: 30.48,
+							y: 30.48,
+							z: 13.97,
 						},
 						price: 2110,
+						rateTable: uspsRate,
 					},
 					{
 						name: "USPS Large 2",
 						weightMax: 70,
 						dimensions: {
-							x: 34.6075,
-							y: 30.1625,
-							z: 8.5725,
+							x: 60.16625,
+							y: 29.845,
+							z: 7.62,
 						},
 						price: 2110,
+						rateTable: uspsRate,
 					},
 				],
 				includeScripts: false,
