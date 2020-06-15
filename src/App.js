@@ -6,7 +6,7 @@ import Result from "./components/Result/Result.js";
 import axios from "axios";
 import NavBar from "./components/NavBar";
 import "fontsource-roboto";
-import Jumbotron from "./Jumbotron";
+import Jumbotron from "./Jumbotron.js";
 
 const uspsRate = {
 	carrier: "USPS",
@@ -293,6 +293,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+				<Jumbotron />
 				<NavBar />
 				<div className="App">
 					<div id="items" class="split left">
