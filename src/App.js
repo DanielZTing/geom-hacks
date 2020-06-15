@@ -6,7 +6,7 @@ import Result from "./components/Result/Result.js";
 import axios from "axios";
 import NavBar from "./components/NavBar";
 import "fontsource-roboto";
-import Jumbotron from "./Jumbotron";
+import Jumbotron from "./Jumbotron.js";
 
 const uspsRate = {
 	carrier: "USPS",
@@ -293,7 +293,8 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<NavBar />
+				<Jumbotron />
+				<NavBar sticky="top" />
 				<div className="App">
 					<div id="items" class="split left">
 						{Object.keys(this.state.items).map((item) => (
@@ -317,7 +318,7 @@ class App extends React.Component {
 					</div>
 					<div id="results" class="split right">
 						<div class="desc">
-							<h2>What this does:</h2>
+							<h2> <b>  What This Does: </b></h2>
 							<p>
 								Don't waste your valuable dollars spent on
 								excessive packaging. Spend your money on what
