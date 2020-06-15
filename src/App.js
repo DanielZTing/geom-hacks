@@ -300,6 +300,7 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
+				<Jumbotron />
 				<NavBar/>
 				<p>
 					Total cost: $
