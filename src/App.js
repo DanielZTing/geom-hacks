@@ -306,38 +306,45 @@ class App extends React.Component {
 							/>
 						))}
 						<p>
-							Donation items cost: ${this.state.totalCost / 100}
+							Donation Items Cost: ${this.state.totalCost / 100}
 							<br />
-							Shipping/packaging cost: ${this.state.boxCost / 100}
+							Shipping and Packaging Cost: $
+							{this.state.boxCost / 100}
 							<br />
-							Total cost: $
+							Total Cost: $
 							{(this.state.totalCost + this.state.boxCost) / 100}
 						</p>
 					</div>
 					<div id="results" class="split right">
+						<div class="desc">
+							<h2>What this does:</h2>
+							<p>
+								Don't waste your valuable dollars spent on
+								excessive packaging. Spend your money on what
+								counts, the actual donations.
+								<br />
+								<br />
+								COVID-AID provides you with clear images on how
+								to pack commonly donated items depending on the
+								quantity of each donation. By using COVID-AID,
+								you avoid the wasteful inefficient packaging
+								methods most people use and utilize your box
+								properly.
+								<br />
+								<br />
+								This page also calculates the cost of a donation
+								depending on the quantity of a donation item.
+								<br />
+								<br />
+								<br />
+								<br />
+								<em>If not fully loaded, zoom out</em>
+							</p>
+						</div>
 						<Result
 							names={this.state.names}
 							response={this.state.image}
 						/>
-					</div>
-					<div class="desc">
-						<h2>What this does:</h2>
-						<p>
-							Don't waste your valuable dollars spent on excessive
-							packaging. Spend your money on what counts, the
-							actual donations.
-							<br />
-							<br />
-							COVID-AID provides you with clear images on how to
-							pack commonly donated items depending on the
-							quantity of each donation. By using COVID-AID, you
-							avoid the wasteful inefficient packaging methods
-							most people use and utilize your box properly.
-							<br />
-							<br />
-							This page also calculates the cost of a donation
-							depending on the quantity of a donation item.
-						</p>
 					</div>
 				</div>
 			</div>
