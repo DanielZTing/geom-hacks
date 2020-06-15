@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/geom-hacks/precache-manifest.2fb82410ecb59a763bba7449ee7644f0.js"
+  "/geom-hacks/precache-manifest.60944e314afb6c03a1eb884432bcc60d.js"
 );
 
 self.addEventListener('message', (event) => {

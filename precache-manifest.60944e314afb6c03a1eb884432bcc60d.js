@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "75dea46b88c74eead17980ee63d3ae90",
+    "revision": "9a8f3788d789203ce17e895380e08a4b",
     "url": "/geom-hacks/index.html"
   },
   {
