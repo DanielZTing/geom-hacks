@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/geom-hacks/static/css/main.d87e4050.chunk.css",
+    "main.js": "/geom-hacks/static/js/main.d6d8a1eb.chunk.js",
+    "main.js.map": "/geom-hacks/static/js/main.d6d8a1eb.chunk.js.map",
+    "runtime-main.js": "/geom-hacks/static/js/runtime-main.85f6e9fa.js",
+    "runtime-main.js.map": "/geom-hacks/static/js/runtime-main.85f6e9fa.js.map",
+    "static/css/2.a675e660.chunk.css": "/geom-hacks/static/css/2.a675e660.chunk.css",
+    "static/js/2.133ad9fd.chunk.js": "/geom-hacks/static/js/2.133ad9fd.chunk.js",
+    "static/js/2.133ad9fd.chunk.js.map": "/geom-hacks/static/js/2.133ad9fd.chunk.js.map",
+    "index.html": "/geom-hacks/index.html",
+    "precache-manifest.4cd5196d488a148513542b4fd78cc963.js": "/geom-hacks/precache-manifest.4cd5196d488a148513542b4fd78cc963.js",
+    "service-worker.js": "/geom-hacks/service-worker.js",
+    "static/css/2.a675e660.chunk.css.map": "/geom-hacks/static/css/2.a675e660.chunk.css.map",
+    "static/css/main.d87e4050.chunk.css.map": "/geom-hacks/static/css/main.d87e4050.chunk.css.map",
+    "static/js/2.133ad9fd.chunk.js.LICENSE.txt": "/geom-hacks/static/js/2.133ad9fd.chunk.js.LICENSE.txt",
+    "static/media/boatImage.png": "/geom-hacks/static/media/boatImage.bb0ee073.png",
+    "static/media/logo.svg": "/geom-hacks/static/media/logo.5d5d9eef.svg",
+    "static/media/index.css": "/geom-hacks/static/media/roboto-latin-900-normal.bb1e4dc6.woff"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.85f6e9fa.js",
+    "static/css/2.a675e660.chunk.css",
+    "static/js/2.133ad9fd.chunk.js",
+    "static/css/main.d87e4050.chunk.css",
+    "static/js/main.d6d8a1eb.chunk.js"
+  ]
+}
