@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "390d9ec638a8ee756ed25d5741739d69",
+    "revision": "c574b383b5df66a2a14998f9b9a12c6d",
     "url": "/geom-hacks/index.html"
   },
   {
-    "revision": "1af2c27eda55bee2fdd9",
+    "revision": "52b328c7fb3c3fd17445",
     "url": "/geom-hacks/static/css/2.a675e660.chunk.css"
   },
   {
-    "revision": "dfa6af39e06c06d69eef",
-    "url": "/geom-hacks/static/css/main.d87e4050.chunk.css"
+    "revision": "40dd5da8e588f64ed3d2",
+    "url": "/geom-hacks/static/css/main.436abcef.chunk.css"
   },
   {
-    "revision": "1af2c27eda55bee2fdd9",
-    "url": "/geom-hacks/static/js/2.133ad9fd.chunk.js"
+    "revision": "52b328c7fb3c3fd17445",
+    "url": "/geom-hacks/static/js/2.bb839033.chunk.js"
   },
   {
     "revision": "5e9b6f5c16b720e8a86875f97734673e",
-    "url": "/geom-hacks/static/js/2.133ad9fd.chunk.js.LICENSE.txt"
+    "url": "/geom-hacks/static/js/2.bb839033.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "dfa6af39e06c06d69eef",
-    "url": "/geom-hacks/static/js/main.d6d8a1eb.chunk.js"
+    "revision": "40dd5da8e588f64ed3d2",
+    "url": "/geom-hacks/static/js/main.2e3a4183.chunk.js"
   },
   {
     "revision": "9301f3125e3508f09248",
