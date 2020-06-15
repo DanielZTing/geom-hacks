@@ -3,10 +3,10 @@ import logo from "./logo.svg";
 import "./App.css";
 import Item from "./components/Item/Item.js";
 import Result from "./components/Result/Result.js";
-import axios from "axios"
-import NavBar from "./components/NavBar"
+import axios from "axios";
+import NavBar from "./components/NavBar";
 import "fontsource-roboto";
-import Jumbotron from "./Jumbotron"
+import Jumbotron from "./Jumbotron";
 
 const uspsRate = {
 	carrier: "USPS",
@@ -122,13 +122,6 @@ class App extends React.Component {
 					color: "#3F51B5",
 					weight: 0.2,
 					cost: 999,
-				},
-				"Rubbing Alcohol": {
-					quantity: 0,
-					dimensions: { x: 8.89, y: 8.89, z: 20.32 },
-					color: "#9C27B0",
-					weight: 2.25,
-					cost: 2898,
 				},
 				"Wet Wipes": {
 					quantity: 0,
@@ -300,31 +293,53 @@ class App extends React.Component {
 	render() {
 		return (
 			<div>
-				<NavBar/>
-				<p>
-					Total cost: $
-					{(this.state.totalCost + this.state.boxCost) / 100}
-				</p>
-				<div/>
-				<div className='App'>
-				<div id="items" class="split left">
-					{Object.keys(this.state.items).map((item) => (
-						<Item
-							name={item}
-							value={this.state.items[item]["quantity"]}
-							onChange={(item, quantity) =>
-								this.handleChange(item, quantity)
-							}
+				<NavBar />
+				<div className="App">
+					<div id="items" class="split left">
+						{Object.keys(this.state.items).map((item) => (
+							<Item
+								name={item}
+								value={this.state.items[item]["quantity"]}
+								onChange={(item, quantity) =>
+									this.handleChange(item, quantity)
+								}
+							/>
+						))}
+						<p>
+							Donation items cost: ${this.state.totalCost / 100}
+							<br />
+							Shipping/packaging cost: ${this.state.boxCost / 100}
+							<br />
+							Total cost: $
+							{(this.state.totalCost + this.state.boxCost) / 100}
+						</p>
+					</div>
+					<div id="results" class="split right">
+						<Result
+							names={this.state.names}
+							response={this.state.image}
 						/>
-					))}
+					</div>
+					<div class="desc">
+						<h2>What this does:</h2>
+						<p>
+							Don't waste your valuable dollars spent on excessive
+							packaging. Spend your money on what counts, the
+							actual donations.
+							<br />
+							<br />
+							COVID-AID provides you with clear images on how to
+							pack commonly donated items depending on the
+							quantity of each donation. By using COVID-AID, you
+							avoid the wasteful inefficient packaging methods
+							most people use and utilize your box properly.
+							<br />
+							<br />
+							This page also calculates the cost of a donation
+							depending on the quantity of a donation item.
+						</p>
+					</div>
 				</div>
-				<div id="results" class="split right">
-					<Result
-						names={this.state.names}
-						response={this.state.image}
-					/>
-				</div>
-			</div>
 			</div>
 		);
 	}
