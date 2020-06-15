@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c574b383b5df66a2a14998f9b9a12c6d",
+    "revision": "f3bc34a352c97015c6a554c0874bb500",
     "url": "/geom-hacks/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/geom-hacks/static/css/2.a675e660.chunk.css"
   },
   {
-    "revision": "40dd5da8e588f64ed3d2",
-    "url": "/geom-hacks/static/css/main.436abcef.chunk.css"
+    "revision": "dd4c30ca3b9b6042e89d",
+    "url": "/geom-hacks/static/css/main.76a425a7.chunk.css"
   },
   {
     "revision": "52b328c7fb3c3fd17445",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/geom-hacks/static/js/2.bb839033.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "40dd5da8e588f64ed3d2",
-    "url": "/geom-hacks/static/js/main.2e3a4183.chunk.js"
+    "revision": "dd4c30ca3b9b6042e89d",
+    "url": "/geom-hacks/static/js/main.a114441e.chunk.js"
   },
   {
     "revision": "9301f3125e3508f09248",
