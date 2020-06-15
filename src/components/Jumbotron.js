@@ -1,18 +1,16 @@
 import React from 'react';
 import { Jumbotron as Jumbo, Container } from 'react-bootstrap';
-import boatImage from '../src/boatImage.png';
 import styled from 'styled-components';
+import boatImage from '../src/boatImage.png';
 
 const Styles = styled.div`
   .jumbo {
     background: url(${boatImage}) no-repeat fixed bottom;
     background-size: cover;
     color: #efefef;
-    height: 800px;
+    height: 200px;
     position: relative;
     z-index: -2;
-    text-align: center;
-    font-size: 50px;
   }
   .overlay {
     background-color: #000;
@@ -31,11 +29,9 @@ export const Jumbotron = () => (
     <Jumbo fluid className="jumbo">
       <div className="overlay"></div>
       <Container>
-        <h1>Compacctly</h1>
+        <h1>Welcome</h1>
+        <p>COVID-AID</p>
       </Container>
     </Jumbo>
   </Styles>
 )
-
-
-export default Jumbotron

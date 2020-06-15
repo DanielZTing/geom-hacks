@@ -294,7 +294,7 @@ class App extends React.Component {
 		return (
 			<div>
 				<Jumbotron />
-				<NavBar />
+				<NavBar sticky="top" />
 				<div className="App">
 					<div id="items" class="split left">
 						{Object.keys(this.state.items).map((item) => (
@@ -318,7 +318,7 @@ class App extends React.Component {
 					</div>
 					<div id="results" class="split right">
 						<div class="desc">
-							<h2>What this does:</h2>
+							<h2> <b>  What This Does: </b></h2>
 							<p>
 								Don't waste your valuable dollars spent on
 								excessive packaging. Spend your money on what

@@ -7,7 +7,7 @@ import "./NavBar.css"
 const NavBar = () => {
     return(
         <div>
-            <AppBar position="static">
+            <AppBar position="sticky">
                 <Toolbar>
                     <Typography>
                         COVID-19 DONATION AID          
