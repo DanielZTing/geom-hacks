@@ -8,27 +8,32 @@ const Styles = styled.div`
 	.jumbo {
 		background: url(${boatImage}) no-repeat fixed bottom;
 		background-size: cover;
-		color: #efefef;
+    color: #ffffff;
+    font-color: #ffffff;
 		height: 800px;
 		position: relative;
 		z-index: 6;
 		text-align: center;
 		font-size: 50px;
-	}
+  }
+  .container{
+    font-color: #ffffff;
+  }
 	.overlay {
 		background-color: #000;
-		opacity: 0.4;
+		opacity: 0;
 		position: absolute;
 		top: 0;
 		left: 0;
 		bottom: 0;
 		right: 0;
-		z-index: 4;
+    z-index: 4;
+    font-color: #ffffff;
 	}
 
-	h1 {
-		z-index: 10;
-    color: white;
+	h1{
+		z-index: 4;
+    font-color: white;
 	}
 
 	#icon {
@@ -44,6 +49,11 @@ export const Jumbotron = () => (
 		<Jumbo fluid className="jumbo">
 			<div className="overlay"></div>
 			<Container>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
+        <br></br>
 				<h1>Compacctly</h1>
 				<div id="icon">
 					<ExpandMoreIcon fontSize="inherit" />
