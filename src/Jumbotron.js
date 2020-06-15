@@ -53,7 +53,6 @@ export const Jumbotron = () => (
         <br></br>
         <br></br>
         <br></br>
-        <br></br>
 				<h1>Compacctly</h1>
 				<div id="icon">
 					<ExpandMoreIcon fontSize="inherit" />
