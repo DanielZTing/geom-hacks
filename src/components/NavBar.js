@@ -5,16 +5,14 @@ import Typography from '@material-ui/core/Typography'
 import "./NavBar.css"
 
 const NavBar = () => {
-    return(
-        <div>
-            <AppBar position="static">
-                <Toolbar>
-                    <Typography>
-                        COVID-19 DONATION AID          
-                    </Typography>
-                </Toolbar>
-            </AppBar>
-        </div>
-    )
+    return (
+		<div>
+			<AppBar position="static">
+				<Toolbar>
+					<Typography>COMPACCTLY DONATION AID</Typography>
+				</Toolbar>
+			</AppBar>
+		</div>
+	);
 }
 export default NavBar;

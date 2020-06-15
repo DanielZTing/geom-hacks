@@ -324,9 +324,9 @@ class App extends React.Component {
 								counts, the actual donations.
 								<br />
 								<br />
-								COVID-AID provides you with clear images on how
+								Compacctly provides you with clear images on how
 								to pack commonly donated items depending on the
-								quantity of each donation. By using COVID-AID,
+								quantity of each donation. By using Compacctly,
 								you avoid the wasteful inefficient packaging
 								methods most people use and utilize your box
 								properly.
