@@ -1,3 +1,44 @@
+### Made for Geom Hacks
+https://geom-hacks.devpost.com/
+https://devpost.com/software/covid-aid-acp850
+
+## Pun
+*every project needs at least one*
+
+Compacctly pacc your donations using Paccurate
+
+## Inspiration
+With the recent surge in donations related to COVID, there is a stronger case to make sure our donations are delivered as effectively as possible. Even in the industry, packaging products have inefficiencies. With these inefficiencies come environmental concerns regarding the excessive use of packing material in today’s modern and globalized world.
+
+## What it does
+
+Compacctly provides users with efficient methods for packing their donations. When the user first logs into the website, they are greeted with a recommended package for donation. One the left, the user is provided with options to modify the quantity of commonly donated items such as masks, canned food, and hand sanitizer. Below the options, we display the total cost of donation items, shipping and boxes, and overall cost. On the right, the Paccurate API provides an image showing the user how to most efficiently pack their donations. By using Compacctly, we allow donators to use their funds on actual donations rather than packaging and shipping.
+
+## How we built it
+
+We designed the frontend using ReactJS, a JavaScript framework, while our backend was handled by the Paccurate API.
+
+We used ReactJS since our team wanted to become familiar with the framework and React had states. We built our landing page using Bootstrap. Using Axios, we were able to make POST requests to the Paccurate API and store the SVGs, box names, and total cost variables it returned.
+
+The Paccurate API calculates the best method for packing a box. In our case, we used dimensions from USPS flat rate boxes and imported their rate table to find the exact cost of the boxes and shipping.
+
+## Challenges we ran into
+
+* Bootstrap
+* Different units inside Paccurate API (rateTable and price)
+* None of us knew any (pretty) CSS so it was a real pain to get our GUI not ugly
+
+## Accomplishments that we're proud of
+
+* Updating the image whenever data is changed
+* Display cost of all items
+
+## What we learned
+
+* How to use an API, specifically making POST requests
+* Learned to use ReactJS
+* Material design and Bootstrap in React
+
 <<<<<<< HEAD
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
